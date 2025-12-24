@@ -1,0 +1,55 @@
+﻿@model List<Product>
+
+
+<h2>Manage Products</h2>
+
+@if (TempData["Success"] != null)
+{
+    <p style="color:green">@TempData["Success"]</p>
+}
+
+<h3>All Products</h3>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Stock</th>
+    </tr>
+
+@foreach (var product in Model)
+{
+    <tr>
+        <td>@product.Id</td>
+        <td>@product.Name</td>
+        <td>@product.Description</td>
+        <td>@product.Price</td>
+        <td>@product.StockQuantity</td>
+    </tr>
+}
+</table>
+
+<hr />
+
+<h3>Add New Product</h3>
+
+<form asp-controller="Product" asp-action="AddProduct" method="post">
+    <label>Name:</label><br />
+    <input type="text" name="Name" required /><br /><br />
+
+    <label>Description:</label><br />
+    <input type="text" name="Description" required /><br /><br />
+
+    <label>Price:</label><br />
+    <input type="number" name="Price" step="0.01" required /><br /><br />
+
+    <label>Stock Quantity:</label><br />
+    <input type="number" name="StockQuantity" required /><br /><br />
+
+    <button type="submit">Add Product</button>
+</form>
+
+<br />
+<a href="/Product/Dashboard" class="btn btn-primary">Back to Dashboard</a>
