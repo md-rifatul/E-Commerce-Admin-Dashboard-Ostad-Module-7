@@ -1,47 +1,54 @@
-## Ignore Visual Studio files
+## ===============================
+## .NET / ASP.NET Core
+## ===============================
+
+# Build results
+bin/
+obj/
+
+# Visual Studio files
 .vs/
 *.user
 *.suo
 *.userosscache
 *.sln.docstates
 
-## Ignore build results
-bin/
-obj/
-
-## Ignore Rider / VS Code
+# Rider / VS Code
 .idea/
 .vscode/
 
-## Ignore OS files
+# OS files
 .DS_Store
 Thumbs.db
+desktop.ini
 
-## Ignore logs
+# Logs
 *.log
 
-## Ignore publish output
-**/Properties/PublishProfiles/
-**/wwwroot/lib/
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
 
-## Ignore secrets & settings
+# Publish output
+publish/
+wwwroot/lib/
+
+# Secrets & environment
 appsettings.Development.json
-appsettings.Local.json
+appsettings.Production.json
+appsettings.Staging.json
 secrets.json
 
-## Ignore test results
+# ASP.NET Core HTTPS cert
+*.pfx
+
+# Test results
 TestResults/
-*.trx
 
-## Ignore NuGet
-packages/
-*.nupkg
-
-## Ignore cache
-*.cache
+# Backup & temp files
+*.bak
 *.tmp
-
-## Ignore generated files
-*.dll
-*.exe
-*.pdb
+*.temp
+*.swp
