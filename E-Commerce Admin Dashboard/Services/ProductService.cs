@@ -13,10 +13,10 @@ namespace E_Commerce_Admin_Dashboard.Services
         {
             _mapper = mapper;
         }
-        public void AddProduct(Product product)
+        public void AddProduct(ProductViewModel productViewModel)
         {
-            product.Id = ProductStore.Products.Count + 1;
-            ProductStore.Products.Add(product);
+            productViewModel.Id = ProductStore.Products.Count + 1;
+            ProductStore.Products.Add(_mapper.Map<Product>(productViewModel));
         }
 
         public List<ProductViewModel> GetAllProducts()

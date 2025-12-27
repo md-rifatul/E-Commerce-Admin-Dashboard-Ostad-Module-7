@@ -6,6 +6,6 @@ namespace E_Commerce_Admin_Dashboard.Services.IServices
     public interface IProductService
     {
         List<ProductViewModel> GetAllProducts();
-        void AddProduct(Product product);
+        void AddProduct(ProductViewModel productViewModel);
     }
 }

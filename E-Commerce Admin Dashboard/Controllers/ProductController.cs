@@ -30,21 +30,12 @@ namespace E_Commerce_Admin_Dashboard.Controllers
         {
             if(ModelState.IsValid)
             {
-                // Map ViewModel to Model
-                var product = new Product
-                {
-                    Name = productViewModel.Name,
-                    Description = productViewModel.Description,
-                    Price = productViewModel.Price,
-                    StockQuantity = productViewModel.StockQuantity
-                };
                 
-                _productService.AddProduct(product);
+                _productService.AddProduct(productViewModel);
                 TempData["Success"] = "Product added successfully!";
                 return RedirectToAction("Manage");
             }
 
-            // If validation fails, return to the view with the model state
             var products = _productService.GetAllProducts();
             ViewBag.NewProduct = productViewModel;
             return View("Manage", products);
