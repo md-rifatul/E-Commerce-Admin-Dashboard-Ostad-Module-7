@@ -138,10 +138,3 @@ This project helps reinforce:
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-
-> Built for learning and experimentation. Happy coding! 🎉
-```
-
----
-
-Let me know if you'd like a Bengali version, deployment tips for IIS or Docker, or a sample screenshot section. I can also help you write a professional LinkedIn post to showcase this project.
