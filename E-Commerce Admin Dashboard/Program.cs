@@ -1,5 +1,6 @@
 using E_Commerce_Admin_Dashboard.Services;
 using E_Commerce_Admin_Dashboard.Services.IServices;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IProductService, ProductService>();
+
+builder.Services.AddAutoMapper(typeof(Program));
+
 
 var app = builder.Build();
 
