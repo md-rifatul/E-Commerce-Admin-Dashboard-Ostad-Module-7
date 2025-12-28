@@ -1,8 +1,5 @@
 ﻿@using E_Commerce_Admin_Dashboard.ViewModels
 @model ManagePageViewModel
-@{
-    var newProduct = ViewBag.NewProduct as ProductViewModel ?? new ProductViewModel();
-}
 
 <h2>Manage Products</h2>
 
@@ -46,27 +43,27 @@
 
 <form asp-controller="Product" asp-action="AddProduct" method="post">
     <div asp-validation-summary="All" class="text-danger mb-3"></div>
-    
+
     <div class="mb-3">
-        <label for="Name" class="form-label">Product Name</label>
-        <input asp-for="NewProduct.Name" class="form-control"/>
+        <label asp-for="NewProduct.Name" class="form-label"></label>
+        <input asp-for="NewProduct.Name" class="form-control" />
         <span asp-validation-for="NewProduct.Name" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label for="Description" class="form-label">Description</label>
+        <label asp-for="NewProduct.Description" class="form-label"></label>
         <input asp-for="NewProduct.Description" class="form-control" />
         <span asp-validation-for="NewProduct.Description" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label for="Price" class="form-label">Price</label>
+        <label asp-for="NewProduct.Price" class="form-label"></label>
         <input asp-for="NewProduct.Price" class="form-control" />
         <span asp-validation-for="NewProduct.Price" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label for="StockQuantity" class="form-label">Stock Quantity</label>
+        <label asp-for="NewProduct.StockQuantity" class="form-label"></label>
         <input asp-for="NewProduct.StockQuantity" class="form-control" />
         <span asp-validation-for="NewProduct.StockQuantity" class="text-danger"></span>
     </div>
@@ -79,5 +76,7 @@
 <a asp-controller="Product" asp-action="Dashboard" class="btn btn-primary">Back to Dashboard</a>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
