@@ -23,7 +23,12 @@ namespace E_Commerce_Admin_Dashboard.Controllers
         public IActionResult Manage()
         {
             var products = _productService.GetAllProducts();
-            return View(products);
+            var vm = new ManagePageViewModel
+            {
+                Products = products,
+                NewProduct = new ProductViewModel()
+            };
+            return View(vm);
         }
         [HttpPost]
         public IActionResult AddProduct(ProductViewModel productViewModel)
