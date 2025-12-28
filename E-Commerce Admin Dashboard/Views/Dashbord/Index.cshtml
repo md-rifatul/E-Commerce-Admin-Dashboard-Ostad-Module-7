@@ -1,0 +1,60 @@
+﻿@model DashbordPageViewModel
+
+<h3>Products</h3>
+
+<table class="table table-bordered">
+    @foreach (var product in Model.Products.Items)
+    {
+        <tr>
+            <td>@product.Name</td>
+            <td>@product.Price</td>
+        </tr>
+    }
+</table>
+
+
+
+<ul class="pagination">
+    @for (int i = 1; i <= Model.Products.TotalPages; i++)
+    {
+        <li class="page-item @(i == Model.Products.CurrentPage ? "active" : "")">
+            <a class="page-link"
+               asp-action="Index"
+               asp-route-productPage="@i"
+               asp-route-categoryPage="@Model.Categorys.CurrentPage">
+                @i
+            </a>
+        </li>
+    }
+</ul>
+
+
+
+<h3>Categories</h3>
+
+<table class="table table-bordered">
+    @foreach (var cat in Model.Categorys.Items)
+    {
+        <tr>
+            <td>@cat.Name</td>
+        </tr>
+    }
+</table>
+
+
+
+
+
+<ul class="pagination">
+    @for (int i = 1; i <= Model.Categorys.TotalPages; i++)
+    {
+        <li class="page-item @(i == Model.Categorys.CurrentPage ? "active" : "")">
+            <a class="page-link"
+               asp-action="Index"
+               asp-route-categoryPage="@i"
+               asp-route-productPage="@Model.Products.CurrentPage">
+                @i
+            </a>
+        </li>
+    }
+</ul>
