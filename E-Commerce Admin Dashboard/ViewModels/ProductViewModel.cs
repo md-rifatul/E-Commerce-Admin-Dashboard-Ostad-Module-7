@@ -20,11 +20,11 @@ namespace E_Commerce_Admin_Dashboard.ViewModels
         [Range(0.01, double.MaxValue, ErrorMessage = "Price must be greater than 0")]
         [Display(Name = "Price")]
         [DataType(DataType.Currency)]
-        public decimal Price { get; set; }
+        public decimal? Price { get; set; }
         
         [Required(ErrorMessage = "Stock quantity is required")]
         [Range(1, int.MaxValue, ErrorMessage = "Stock quantity must be 0 or greater")]
         [Display(Name = "Stock Quantity")]
-        public int StockQuantity { get; set; }
+        public int? StockQuantity { get; set; }
     }
 }

@@ -23,22 +23,26 @@ namespace E_Commerce_Admin_Dashboard.Controllers
         public IActionResult Manage()
         {
             var products = _productService.GetAllProducts();
-            return View(products);
+            var vm = new ManagePageViewModel
+            {
+                Products = products,
+                NewProduct = new ProductViewModel()
+            };
+            return View(vm);
         }
         [HttpPost]
-        public IActionResult AddProduct(ProductViewModel productViewModel)
+        public IActionResult AddProduct(ManagePageViewModel managePageViewModel)
         {
             if(ModelState.IsValid)
             {
                 
-                _productService.AddProduct(productViewModel);
+                _productService.AddProduct(managePageViewModel.NewProduct);
                 TempData["Success"] = "Product added successfully!";
                 return RedirectToAction("Manage");
             }
 
-            var products = _productService.GetAllProducts();
-            ViewBag.NewProduct = productViewModel;
-            return View("Manage", products);
+            managePageViewModel.Products = _productService.GetAllProducts();
+            return View("Manage", managePageViewModel);
         }
     }
 }
