@@ -14,15 +14,17 @@ namespace E_Commerce_Admin_Dashboard.Controllers
             _productService = productService;
         }
         [HttpGet]
-        public IActionResult Dashboard()
+        public IActionResult Dashboard(int page = 1)
         {
-            var products = _productService.GetAllProducts();
+            int pageSize = 5;
+            var products = _productService.GetAllProducts(page,pageSize);
             return View(products);
         }
         [HttpGet]
-        public IActionResult Manage()
+        public IActionResult Manage(int page = 1)
         {
-            var products = _productService.GetAllProducts();
+            int pageSize = 5;
+            var products = _productService.GetAllProducts(page, pageSize);
             var vm = new ManagePageViewModel
             {
                 Products = products,
@@ -41,7 +43,7 @@ namespace E_Commerce_Admin_Dashboard.Controllers
                 return RedirectToAction("Manage");
             }
 
-            managePageViewModel.Products = _productService.GetAllProducts();
+            //managePageViewModel.Products = _productService.GetAllProducts();
             return View("Manage", managePageViewModel);
         }
     }

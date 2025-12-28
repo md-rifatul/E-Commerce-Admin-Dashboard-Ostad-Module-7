@@ -1,5 +1,6 @@
-﻿@using E_Commerce_Admin_Dashboard.ViewModels
-@model List<ProductViewModel>
+﻿@using E_Commerce_Admin_Dashboard.Pagination
+@using E_Commerce_Admin_Dashboard.ViewModels
+@model PageResult<ProductViewModel>
 
 <h2>Admin Dashboard</h2>
 
@@ -12,7 +13,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var product in Model)
+        @foreach (var product in Model.Items)
         {
             <tr>
                 <td>@product.Name</td>
@@ -24,6 +25,22 @@
 </table>
 
 <br />
+
+<nav>
+    <ul class="pagination">
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                <a class="page-link"
+                   asp-action="Dashboard"
+                   asp-route-page="@i">
+                    @i
+                </a>
+            </li>
+        }
+    </ul>
+</nav>
+
 
 <a asp-controller="Product" asp-action="Manage" class="btn btn-primary">
     Manage Products

@@ -22,7 +22,56 @@ namespace E_Commerce_Admin_Dashboard.Data
                 Description = "Wireless Headphone",
                 Price = 3500,
                 StockQuantity = 20
-            }
+            },
+                        new Product
+            {
+                Id = 2,
+                Name = "Headphone",
+                Description = "Wireless Headphone",
+                Price = 3500,
+                StockQuantity = 20
+            },
+                                    new Product
+            {
+                Id = 3,
+                Name = "Headphone",
+                Description = "Wireless Headphone",
+                Price = 3500,
+                StockQuantity = 20
+            },
+                                                new Product
+            {
+                Id = 4,
+                Name = "Headphone",
+                Description = "Wireless Headphone",
+                Price = 3500,
+                StockQuantity = 20
+            },
+                                                            new Product
+            {
+                Id = 5,
+                Name = "Headphone",
+                Description = "Wireless Headphone",
+                Price = 3500,
+                StockQuantity = 20
+            },
+                                                                        new Product
+            {
+                Id = 6,
+                Name = "Headphone",
+                Description = "Wireless Headphone",
+                Price = 3500,
+                StockQuantity = 20
+            },
+                                                                                    new Product
+            {
+                Id = 7,
+                Name = "Headphone",
+                Description = "Wireless Headphone",
+                Price = 3500,
+                StockQuantity = 20
+            },
+
         };
     }
 }
