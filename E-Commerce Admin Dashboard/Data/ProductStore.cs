@@ -23,55 +23,46 @@ namespace E_Commerce_Admin_Dashboard.Data
                 Price = 3500,
                 StockQuantity = 20
             },
-                        new Product
-            {
-                Id = 2,
-                Name = "Headphone",
-                Description = "Wireless Headphone",
-                Price = 3500,
-                StockQuantity = 20
-            },
-                                    new Product
+            new Product
             {
                 Id = 3,
-                Name = "Headphone",
-                Description = "Wireless Headphone",
-                Price = 3500,
-                StockQuantity = 20
+                Name = "Keyboard",
+                Description = "Mechanical Keyboard",
+                Price = 4500,
+                StockQuantity = 15
             },
-                                                new Product
+            new Product
             {
                 Id = 4,
-                Name = "Headphone",
-                Description = "Wireless Headphone",
-                Price = 3500,
-                StockQuantity = 20
+                Name = "Mouse",
+                Description = "Wireless Mouse",
+                Price = 1500,
+                StockQuantity = 25
             },
-                                                            new Product
+            new Product
             {
                 Id = 5,
-                Name = "Headphone",
-                Description = "Wireless Headphone",
-                Price = 3500,
-                StockQuantity = 20
+                Name = "Monitor",
+                Description = "Full HD Monitor",
+                Price = 12000,
+                StockQuantity = 10
             },
-                                                                        new Product
+            new Product
             {
                 Id = 6,
-                Name = "Headphone",
-                Description = "Wireless Headphone",
-                Price = 3500,
-                StockQuantity = 20
+                Name = "Printer",
+                Description = "Laser Printer",
+                Price = 18000,
+                StockQuantity = 8
             },
-                                                                                    new Product
+            new Product
             {
                 Id = 7,
-                Name = "Headphone",
-                Description = "Wireless Headphone",
-                Price = 3500,
-                StockQuantity = 20
-            },
-
+                Name = "Webcam",
+                Description = "HD Webcam",
+                Price = 5000,
+                StockQuantity = 12
+            }
         };
     }
 }
